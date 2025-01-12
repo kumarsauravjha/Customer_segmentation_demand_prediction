@@ -1,36 +1,95 @@
 # Strategic Customer Segmentation and Demand Prediction
 
-The aim of this study was to segment customers and predict demand by analyzing historical pricing data. 
-This segmentation is based on purchasing behaviors and the revenue they help the company generate. 
-Complementing this, we predicted the daily and weekly demand which is in terms of the sales of different products using an XGBoost regression model.
+- This project leverages machine learning techniques for customer segmentation and demand prediction in the retail domain.
+- By analyzing historical sales data, we categorize customers into meaningful segments and predict daily and weekly demand trends.
+- The insights are aimed at optimizing inventory management, pricing strategies, and personalized marketing campaigns.
 
-__Segmentation__
+---
 
-![image](https://github.com/kumarsauravjha/Customer_segmentation_demand_prediction/assets/143224932/d6ea7ca5-a769-48a5-b2c1-afcd57099393)
+## 📚 Project Overview
 
-Fig. Comparison of results of k-means and Hierarchical clustering techniques for customer segmentation
+- **Customer Segmentation**: Implemented k-means and hierarchical clustering to group customers based on purchasing behaviors and profitability.
+- **Demand Prediction**: Utilized XGBoost regression to forecast daily and weekly sales, employing time series cross-validation for model evaluation.
+- **Dataset**: Historical retail sales data with over 51,000 records and 24 fields, containing information about orders, customers, and products.
 
+---
 
-![image](https://github.com/kumarsauravjha/Customer_segmentation_demand_prediction/assets/143224932/031c4714-b5ea-4fe3-b141-30c467360ea4)
+## 🔑 Key Features
 
-Fig. Final customer segments (right) from k-means clustering.
+1. **Customer Segmentation**:
+   - Segments identified:
+     1. Stable Performers
+     2. High Achievers
+     3. Challenged Margins
+     4. Balanced Growth
+   - Methodology:
+     - K-means clustering with elbow method for optimal cluster count.
+     - Hierarchical clustering to validate k-means results.
+   - Insights:
+     - High Achievers generate the highest sales but may require strategic targeting for profitability.
 
+2. **Demand Prediction**:
+   - **Daily Demand**: Predicted using XGBoost with features like sales, profit, shipping cost, and order priority.
+   - **Weekly Demand**: Aggregated predictions using key metrics such as quantity and profit.
+   - **Performance Metrics**: Evaluated with MAPE and RMSPE.
 
-![DATS_6103_Project_Group-2 pptx](https://github.com/kumarsauravjha/Customer_segmentation_demand_prediction/assets/143224932/157f8114-0d0d-4d59-90af-15ff7bb9a735)
+---
 
-Fig. Insights in terms of average parameters of the four customer segments identified from k-means clustering.
+## 📊 Tools and Technologies
 
+- **Programming Language**: Python
+- **Libraries**:
+  - Machine Learning: `scikit-learn`, `xgboost`
+  - Visualization: `matplotlib`, `seaborn`
+  - Data Manipulation: `pandas`, `numpy`
+- **Other Tools**: Jupyter Notebook
 
-__Demand Prediction__
+---
 
-![image](https://github.com/kumarsauravjha/Customer_segmentation_demand_prediction/assets/143224932/763593f4-6b36-4cd6-bbcf-f483eb9eea3d)
+## 📂 Repository Structure
 
-Fig. Actual vs predicted daily demand (sales) for the four customer segments by XGBoost model. The dashed lines divide the 5 cross validation folds.
+```plaintext
+├── data/                        # Placeholder for the dataset
+├── notebooks/
+│   ├── Segmentation_and_sales_prediction.ipynb  # Jupyter notebook with EDA, clustering, and predictions
+├── reports/
+│   ├── Strategic Customer Segmentation and Demand Prediction.pdf  # Full project report
+├── scripts/                     # Placeholder for reusable Python scripts
+├── README.md                    # Project documentation
+```
 
-![image](https://github.com/kumarsauravjha/Customer_segmentation_demand_prediction/assets/143224932/0c8481b4-1700-4c51-8654-5eb0ae270928)
+---
 
-Fig. Actual vs predicted weekly demand (sales) for the four customer segments by XGBoost model. The dashed lines divide the 5 cross validation folds.
+## 🚀 How to Run
 
+1. **Clone the Repository**:
+   ```bash
+   git clone https://github.com/<your-username>/<repo-name>.git
+   cd <repo-name>
+   ```
+2. **Install Dependencies**:
+   ```bash
+   pip install -r requirements.txt
+   ```
+3. **Run the Notebook**:
+   Open `Segmentation_and_sales_prediction.ipynb` in Jupyter Notebook or JupyterLab.
 
+---
 
+## 📈 Results
 
+1. **Customer Segmentation**:
+   - Optimal clusters: 4 (using elbow method).
+   - Higher silhouette score observed with hierarchical clustering, but k-means was retained for scalability.
+
+2. **Demand Prediction**:
+   - **Daily**: Best performance with MAPE = 22.04 and RMSPE = 28.66 for one segment.
+   - **Weekly**: Improved accuracy compared to daily, suggesting better performance with aggregated predictions.
+
+---
+
+## 🛠 Future Enhancements
+
+- Explore additional clustering techniques (e.g., DBSCAN, Gaussian Mixture Models).
+- Incorporate advanced feature engineering for better demand prediction.
+- Expand dataset to include customer demographics for richer insights.
